@@ -16,18 +16,32 @@
 package main
 
 // Add imports.
+import (
+	"fmt"
+)
 
 // Declare the speaker interface with a single method called sayHello.
+type speaker interface {
+	sayHello()
+}
 
 // Declare an empty struct type named english.
+type English struct
 
 // Declare a method named sayHello for the english type
 // using a value receiver. "Hello World"
+func (e English) sayHello() {
+	fmt.Println("Hello World")
+}
 
 // Declare an empty struct type named chinese.
+type Chinese struct
 
 // Declare a method named sayHello for the chinese type
 // using a value receiver. "你好世界"
+func (c Chinese) sayHello() {
+  fmt.Println("你好世界")
+}
 
 // sayHello accepts values of the interface type.
 func sayHello( /* Declare parameter */ ) {

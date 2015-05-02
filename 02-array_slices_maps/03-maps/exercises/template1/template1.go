@@ -8,12 +8,24 @@
 package main
 
 // Add imports.
+import (
+	"fmt"
+)
 
 // main is the entry point for the application.
 func main() {
 	// Declare and make a map of integer type values.
+	var valMap = make(map[string]int)
 
 	// Intialize some data into the map.
+	valMap["age"] = 30
+	valMap["days"] = 5
+	valMap["num"] = 10
+	valMap["chickens"] = 15
+	valMap["money"] = 1000
 
 	// Display each key/value pair.
+	for i, name := range valMap {
+		fmt.Println(i, ":", name)
+	}
 }

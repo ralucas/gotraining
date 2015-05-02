@@ -12,16 +12,24 @@
 package main
 
 // Add imports.
+import (
+	"fmt"
+)
 
 // main is the entry point for the application.
 func main() {
 	// Declare an integer variable with the value of 20.
+	num := 20
 
 	// Display the address of and value of the variable.
+	fmt.Printf("Address and Value of num: %p %v\n", &num, num)
 
 	// Declare a pointer variable of type int. Assign the
 	// address of the integer variable above.
+	var point *int
 
+	point = &num
 	// Display the address of, value of and the value the pointer
 	// points to.
+	fmt.Printf("Address, value, and value of pointer: %p %v %v\n", &point, point, *point)
 }

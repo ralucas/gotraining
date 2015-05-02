@@ -15,19 +15,29 @@
 package main
 
 // Add imports.
+import "fmt"
 
 // Declare the counter named type with a base type of int.
+type Counter int
 
 func main() {
 	// Declare and display the variable of the named type
 	// to its zero value.
+	var num Counter
+
+	fmt.Printf("Number %T %v\n", num, num)
 
 	// Declare and display the variable of the named type
 	// to the value of 10.
+	var ni Counter = 10
+
+	fmt.Printf("Number %T %v\n", ni, ni)
 
 	// Declare a variable of type int initialized to 1.
+	var ti int = 1
 
 	// Assign this new variable to one of the named variables.
+	num = ti
 
 	// Did you get a compiler error on the above assignment?
 }

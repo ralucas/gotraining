@@ -18,31 +18,62 @@
 package main
 
 // Add imports.
+import (
+	"fmt"
+)
 
 // Declare an interface type named yelper that has a
 // single method called yelp().
+type yelper interface {
+	yelp()
+}
 
 // Declare a struct type named animal with two fields
 // name of type string and age of type in.
+type animal struct {
+	name string
+	age  int
+}
 
 // Declare a method for the animal struct that implements
 // the yelper interface using a pointer receiver.
+func (a *animal) yelp() {
+	fmt.Printf("Yelping %v %v\n", a.name, a.age)
+}
 
 // Declare a struct type named dog that embeds the animal
 // type and has a field named bark of type int.
+type dog struct {
+	animal
+	bark int
+}
 
 // Declare a method for the dog struct that implements
 // the yelper interface using a pointer receiver.
+func (d *dog) yelp() {
+	fmt.Printf("Yelping %v\n", d.bark)
+}
 
 // main is the entry point for the application.
 func main() {
 	// Declare and initialize a variable of type dog.
+	spot := dog{
+		animal: animal{
+			name: "Spot",
+			age:  14,
+		},
+		bark: 6,
+	}
 
 	// Display the value of the variable.
+	fmt.Println(spot)
 
 	// Declare a variable of the yelper interface type.
 	var y yelper
 
 	// Assign the dog variable to the iterface variable.
 	// The call the interface method.
+	y = spot
+
+	y.yelp()
 }

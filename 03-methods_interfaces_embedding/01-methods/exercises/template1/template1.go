@@ -10,12 +10,19 @@
 package main
 
 // Add imports.
+import "fmt"
 
 // Declare a struct that represents a ball player.
 // Include field called name, atBats and hits.
+type Player struct {
+	name   string
+	atBats int64
+	hits   int64
+}
 
 // Declare a method that calculates the batting average for a batter.
-func ( /* receiver */ ) average() /* return type */ {
+func (p Player) average() int64 {
+	return p.hits / p.atBats
 }
 
 // main is the entry point for the application.
